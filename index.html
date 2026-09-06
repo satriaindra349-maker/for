@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tolong maafin aku yah? 🥺</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffe6e9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 85%;
+    }
+
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      position: relative;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #yesBtn:hover {
+      background-color: #ff758f;
+      transform: scale(1.05);
+    }
+
+    #noBtn {
+      background-color: #ccc;
+      color: #333;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="mainCard">
+    <img id="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHI1OWR5M21xeXhhNGU3aHRyOHU3and6aDZxeDFpYnhubmswY3I0YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L9543E29v4DxAUfzx4/giphy.gif" alt="Crying meme">
+    <h1 id="title">aku minta maaf yah... 🥺</h1>
+    <p id="message">jangan marah lagi dong. nanti cantiknya berkurang 1%, rugi banget gasii? maafin aku ya?</p>
+    
+    <div class="btn-container">
+      <button id="yesBtn" onclick="maafin()">iyaa, maafin</button>
+      <button id="noBtn" onmouseover="kabur()" onclick="kabur()">Gak Mau</button>
+    </div>
+  </div>
+
+  <script>
+    function kabur() {
+      const noBtn = document.getElementById('noBtn');
+      // Menghitung posisi acak di layar
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 50));
+      
+      noBtn.style.position = 'fixed';
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    }
+
+    function maafin() {
+      document.getElementById('gif').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3p0eDZocmw4dG13aXExYzFzaDlsN283ZndxOHo0dHBxMDJ4ZWtrOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif";
+      document.getElementById('title').innerText = "YAY! makasih saayaaangg! 🥰";
+      document.getElementById('message').innerText = "janji deh gak bakal bikin kesel lagi. jadii ayoo baikan:3";
+      
+      // Sembunyikan tombol
+      document.querySelector('.btn-container').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
